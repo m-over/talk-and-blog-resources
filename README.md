@@ -1,1 +1,1 @@
-# talk-and-blog-resources
+# Talk and Blog post resources
