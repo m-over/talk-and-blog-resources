@@ -1,4 +1,4 @@
-# Intro to Kind
+# Intro to Kind — Fast and easy local Kubernetes cluster
 
 Hey there👋,
 
