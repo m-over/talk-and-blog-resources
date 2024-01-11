@@ -84,7 +84,7 @@ Now, our local port 9090 is bound to port 80 on the pod. In another terminal, we
 curl localhost:9090
 ```
 
-![image7.png](./image/image7.png)
+![image7.png](./images/image7.png)
 
 You should see the Welcome page from Nginx. You can also use your browser and navigate to [http://localhost:9090](http://localhost:9090/) to see the page. If you check the terminal where we are running the port forward, you will see the requests that we made. If you want to verify that the pod is serving our requests, you can check the logs:
 
