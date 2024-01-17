@@ -3,3 +3,4 @@ Welcome to the Talk and Blog Resources repository! In this space, I share my lat
 
 ### Blog Posts
 - [Intro to Kind](./blog/introKind/)
+- [Building container images from scratch](./blog/buildingContainerImagesWithScratch/)
