@@ -1,3 +1,4 @@
+![head_image.png](./images/head_image.png)
 # Intro to Kind — Fast and easy local Kubernetes cluster
 
 Hey there👋,
