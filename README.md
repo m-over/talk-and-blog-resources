@@ -5,4 +5,4 @@ Welcome to the Talk and Blog Resources repository! In this space, I share my lat
 #### Container & Kubernetes
 - [Intro to Kind](./blog/introKind/)
 - [Building container images from scratch](./blog/buildingContainerImagesFromScratch/)
-- [Container scanning with Trivy](./blog/containerScaningWithTrivy/)
+- [Container scanning with Trivy](./blog/containerScanningWithTrivy/)

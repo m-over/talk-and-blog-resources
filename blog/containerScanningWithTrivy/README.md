@@ -1,6 +1,6 @@
 ![head_image.png](./images/head_image.png)
 
-# **How to Scan Your Container Images and Kubernetes Clusters with Trivy**
+# **How to scan your container images and Kubernetes clusters with Trivy**
 
 Hey there👋,
 
