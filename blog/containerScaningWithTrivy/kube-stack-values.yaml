@@ -1,0 +1,13 @@
+# kube-stack-values.yaml
+alertmanager:
+  enabled: false
+grafana:
+  enabled: true
+prometheus:
+  enabled: true
+  prometheusSpec:
+    replicas: 1
+    shards: 1
+    ruleSelectorNilUsesHelmValues: false
+    podMonitorSelectorNilUsesHelmValues: false
+    serviceMonitorSelectorNilUsesHelmValues: false
