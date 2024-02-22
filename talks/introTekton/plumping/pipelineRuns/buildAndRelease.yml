@@ -20,7 +20,7 @@ spec:
       value: "tektonTalk"
     - name: cr-url
       value: "https://ghcr.io/m-over/talk-and-blog-resources/demo"
-    - name: context-path 
+    - name: dockerfile-path 
       value: "talks/introTekton/Dockerfile"
   pipelineRef:
     name: build-and-release

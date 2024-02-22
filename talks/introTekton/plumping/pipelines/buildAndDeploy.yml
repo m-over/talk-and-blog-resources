@@ -16,7 +16,7 @@ spec:
     - name: cr-url
       type: string
       description: URL to container registry
-    - name: context-path
+    - name: dockerfile-path
       type: string
   tasks:
     - name: git-clone
@@ -28,6 +28,8 @@ spec:
       params:
         - name: url
           value: $(params.git-url)
+        - name: revision
+          value: $(params.git-revision)
     - name: build-container
       runAfter:
         - git-clone
@@ -39,6 +41,6 @@ spec:
       params:
         - name: IMAGE
           value: $(params.cr-url)/cncf-demo:test
-        - name: CONTEXT 
-          value: $(params.context-path)
+        - name: DOCKERFILE
+          value: $(params.dockerfile-path)
           
