@@ -16,6 +16,8 @@ spec:
     - name: cr-url
       type: string
       description: URL to container registry
+    - name: context-path
+      type: string
   tasks:
     - name: git-clone
       taskRef:
@@ -27,6 +29,8 @@ spec:
         - name: url
           value: $(params.git-url)
     - name: build-container
+      runAfter:
+        - git-clone
       taskRef:
         name: kaniko
       workspaces:
@@ -35,12 +39,6 @@ spec:
       params:
         - name: IMAGE
           value: $(params.cr-url)/cncf-demo:test
-        - name: DOCKERFILE
-          value: ./talks/introTekton/demo/Dockerfile
-            #    - name: deploy-container
-            #      taskRef:
-            #        name: XXX
-            #      workspaces:
-            #        - name: source
-            #          workspace: source
-      
+        - name: CONTEXT 
+          value: $(params.context-path)
+          

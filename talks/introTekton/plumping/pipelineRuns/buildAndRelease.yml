@@ -15,8 +15,12 @@ spec:
               storage: 1Gi
   params:
     - name: git-url
-      value: "git@github.com:m-over/talk-and-blog-resources.git"
+      value: "https://github.com/m-over/talk-and-blog-resources.git"
+    - name: git-revision
+      value: "tektonTalk"
     - name: cr-url
       value: "https://ghcr.io/m-over/talk-and-blog-resources/demo"
+    - name: context-path 
+      value: "talks/introTekton/Dockerfile"
   pipelineRef:
     name: build-and-release
