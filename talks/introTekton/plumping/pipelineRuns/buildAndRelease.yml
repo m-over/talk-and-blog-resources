@@ -13,13 +13,16 @@ spec:
           resources:
             requests:
               storage: 1Gi
+    - name: cr-auth
+      secret:
+        secretName: ghcr-auth 
   params:
     - name: git-url
       value: "https://github.com/m-over/talk-and-blog-resources.git"
     - name: git-revision
       value: "tektonTalk"
     - name: cr-url
-      value: "https://ghcr.io/m-over/talk-and-blog-resources/demo"
+      value: "ghcr.io/m-over"
     - name: dockerfile-path 
       value: "talks/introTekton/Dockerfile"
   pipelineRef:

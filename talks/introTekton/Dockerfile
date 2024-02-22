@@ -1,8 +1,9 @@
-FROM golang:1.21.6-alpine3.18 AS build
+FROM golang:1.22.0 AS build
 
 # Build binary from go source
 WORKDIR /go/src/app
-COPY ./src/* .
+COPY ./go.mod .
+COPY ./*.go .
 RUN go mod download
 RUN GOOS=linux go build -ldflags="-s" -o /go/bin/app -v .
 

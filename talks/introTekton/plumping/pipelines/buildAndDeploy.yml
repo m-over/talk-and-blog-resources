@@ -6,6 +6,7 @@ metadata:
 spec:
   workspaces:
     - name: source
+    - name: cr-auth
   params:
     - name: git-url
       type: string
@@ -38,9 +39,13 @@ spec:
       workspaces:
         - name: source
           workspace: source
+        - name: dockerconfig
+          workspace: cr-auth
       params:
         - name: IMAGE
-          value: $(params.cr-url)/cncf-demo:test
+          value: $(params.cr-url)/cncf-demo:latest
+            #- name: CONTEXT
+            #value: $(params.dockerfile-path)
         - name: DOCKERFILE
           value: $(params.dockerfile-path)
           
