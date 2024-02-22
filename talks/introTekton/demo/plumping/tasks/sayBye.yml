@@ -1,0 +1,16 @@
+---
+apiVersion: tekton.dev/v1
+kind: Task
+metadata:
+  name: say-bye
+spec:
+  params:
+    - name: name
+      type: string
+      description: Name that will be greeted
+      default: "world"
+  steps:
+    - name: say-bye 
+      image: alpine:3.19.1
+      script: |
+        echo "Hello $(params.name)"

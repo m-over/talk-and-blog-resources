@@ -1,0 +1,22 @@
+---
+apiVersion: tekton.dev/v1
+kind: PipelineRun
+metadata:
+  generateName: build-and-release-
+spec:
+  workspaces:
+    - name: source
+      volumeClaimTemplate:
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 1Gi
+  params:
+    - name: git-url
+      value: "git@github.com:m-over/talk-and-blog-resources.git"
+    - name: cr-url
+      value: "https://ghcr.io/m-over/talk-and-blog-resources/demo"
+  pipelineRef:
+    name: build-and-release

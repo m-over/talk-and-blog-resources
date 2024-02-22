@@ -1,0 +1,12 @@
+---
+apiVersion: tekton.dev/v1
+kind: PipelineRun
+metadata:
+  generateName: say-hello-
+spec:
+  params: 
+    - name: name
+      value: "CNCF Frankfurt"
+  pipelineRef:
+    name: say-hello
+  

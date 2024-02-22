@@ -1,0 +1,46 @@
+---
+apiVersion: tekton.dev/v1
+kind: Pipeline
+metadata:
+  name: build-and-release
+spec:
+  workspaces:
+    - name: source
+  params:
+    - name: git-url
+      type: string
+      description: URL to git repo
+    - name: git-revision
+      type: string
+      description: Revision for clone
+    - name: cr-url
+      type: string
+      description: URL to container registry
+  tasks:
+    - name: git-clone
+      taskRef:
+        name: git-clone
+      workspaces:
+        - name: output 
+          workspace: source
+      params:
+        - name: url
+          value: $(params.git-url)
+    - name: build-container
+      taskRef:
+        name: kaniko
+      workspaces:
+        - name: source
+          workspace: source
+      params:
+        - name: IMAGE
+          value: $(params.cr-url)/cncf-demo:test
+        - name: DOCKERFILE
+          value: ./talks/introTekton/demo/Dockerfile
+            #    - name: deploy-container
+            #      taskRef:
+            #        name: XXX
+            #      workspaces:
+            #        - name: source
+            #          workspace: source
+      

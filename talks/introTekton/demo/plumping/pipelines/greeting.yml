@@ -1,0 +1,23 @@
+---
+apiVersion: tekton.dev/v1
+kind: Pipeline
+metadata:
+  name: greeting
+spec:
+  params:
+  - name: name
+    type: string
+    default: "World"
+  tasks:
+  - name: say-hello
+    params:
+      - name: name
+        value: $(params.name)
+    taskRef:
+      name: say-hello
+  - name: say-bye
+    params:
+      - name: name
+        value: $(params.name)
+    taskRef:
+      name: say-bye

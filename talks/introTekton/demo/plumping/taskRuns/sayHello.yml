@@ -1,0 +1,11 @@
+---
+apiVersion: tekton.dev/v1
+kind: TaskRun
+metadata:
+  generateName: say-hello-
+spec:
+  params:
+    - name: name
+      value: "CNCF Fankfurt"
+  taskRef:
+    name: say-hello

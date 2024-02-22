@@ -1,0 +1,17 @@
+---
+apiVersion: tekton.dev/v1
+kind: Pipeline
+metadata:
+  name: say-hello
+spec:
+  params:
+  - name: name
+    type: string
+    default: "Frankfurt"
+  tasks:
+  - name: say-hello
+    params:
+      - name: name
+        value: $(params.name)
+    taskRef:
+      name: say-hello
